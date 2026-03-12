@@ -196,4 +196,116 @@ body {
     .footer-desc {
         max-width: 100%;
     }
+
+    /* ================================================ */
+/* NUEVO: Estilos compartidos de secciones          */
+/* Usados en Servicios, Portafolio, etc.            */
+/* ================================================ */
+
+/* Títulos de sección reutilizables */
+.section-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Subtítulo debajo del título de sección */
+.section-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+}
+/* ================================================ */
+/* NUEVO: Estilos del Hero con Video (index.html)   */
+/* ================================================ */
+
+/* Sección hero que ocupa toda la pantalla */
+.hero-video {
+    position: relative;       /* Necesario para posicionar el overlay y el contenido encima del video */
+    width: 100%;
+    height: calc(100vh - 70px); /* Resta la altura del navbar para que no se solape */
+    overflow: hidden;           /* Recorta el video si sobresale del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video de fondo: cubre todo el contenedor */
+.hero-video__bg {
+    position: absolute;   /* Se posiciona respecto al .hero-video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Cubre el área sin deformar el video */
+    z-index: 0;           /* Queda detrás del overlay y del contenido */
+}
+
+/* Capa semi-transparente sobre el video para oscurecerlo
+   y mejorar la legibilidad del texto blanco */
+.hero-video__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% de opacidad negra */
+    z-index: 1;                            /* Encima del video, debajo del contenido */
+}
+
+/* Contenido de texto centrado sobre el video */
+.hero-video__content {
+    position: relative;
+    z-index: 2;           /* Encima del overlay y del video */
+    text-align: center;
+    color: #fff;
+    padding: 0 1.5rem;
+}
+
+/* Título principal del hero */
+.hero-video__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para mayor legibilidad */
+}
+
+/* Subtítulo del hero */
+.hero-video__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Botón de llamada a la acción (CTA) del hero */
+.hero-video__btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #3498db;     /* Azul de marca, igual que el hover del navbar */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efecto hover del botón CTA */
+.hero-video__btn:hover {
+    background-color: #2980b9;   /* Azul más oscuro al pasar el cursor */
+    transform: translateY(-2px); /* Sube ligeramente el botón */
+}
+
+/* Responsividad del hero en móvil */
+@media (max-width: 768px) {
+    .hero-video__title {
+        font-size: 2rem;
+    }
+    .hero-video__subtitle {
+        font-size: 1rem;
+    }
 }
