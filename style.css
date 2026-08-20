@@ -20,6 +20,7 @@ body {
 /* ========================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ocupa al menos toda la pantalla */
